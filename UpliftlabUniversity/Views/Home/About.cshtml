@@ -1,0 +1,26 @@
+﻿@model IEnumerable<UpliftlabUniversity.ViewModels.EnrollmentDateGroup>
+@{
+    ViewBag.Title = "Statistics of Student";
+}
+<h2>Student Body Statistics</h2>
+<table class="table">
+    <tr>
+        <th>
+            Enrollment Date
+        </th>
+        <th>
+            Students
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @String.Format("{0:d}", item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
